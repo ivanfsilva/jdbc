@@ -11,9 +11,8 @@ public class SingleConnectionTest {
 	public void initBanco() {
 		UserDAO dao = new UserDAO();
 		User user = new User();
-		user.setId(4L);
-		user.setNome("Matheus");
-		user.setEmail("matheus@email.com");
+		user.setNome("José");
+		user.setEmail("jose@email.com");
 		
 		dao.salvar(user);
 	}
