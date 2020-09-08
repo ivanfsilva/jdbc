@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import model.Telefone;
 import model.User;
 
 public class UserDAOTest {
@@ -62,6 +63,17 @@ public class UserDAOTest {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@Test
+	public void insertTelefone() {
+		Telefone telefone = new Telefone();
+		telefone.setNumero("(87) 4444-5555");
+		telefone.setTipo("Casa");
+		telefone.setUsuario(3L);
+		
+		UserDAO dao = new UserDAO();
+		dao.salvarTelefone(telefone);
 	}
 
 }
