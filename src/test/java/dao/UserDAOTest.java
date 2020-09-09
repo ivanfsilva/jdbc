@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import model.BeanUserFone;
 import model.Telefone;
 import model.User;
 
@@ -74,6 +75,18 @@ public class UserDAOTest {
 		
 		UserDAO dao = new UserDAO();
 		dao.salvarTelefone(telefone);
+	}
+	
+	@Test
+	public void listaFoneUser() {
+		UserDAO dao = new UserDAO();
+		
+		List<BeanUserFone> beanUserFones = dao.listaUserFone(2L);
+		
+		for (BeanUserFone beanUserFone : beanUserFones) {
+			System.out.println(beanUserFone);
+			System.out.println("---------------------------------------------------------------");
+		}
 	}
 
 }
