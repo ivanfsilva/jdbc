@@ -171,5 +171,27 @@ public class UserDAO {
 			}
 		}
 	}
+	
+	public void deleteFonesPorUser(Long idUser) {
+		try {
+			String sqlFone = "DELETE FROM telefoneuser WHERE usuariopessoa = " + idUser;
+			String sqlUser = "DELETE FROM userJdbc WHERE id = " + idUser;
+			
+			PreparedStatement statement = connection.prepareStatement(sqlFone);
+			statement.executeUpdate();
+			connection.commit();
+			
+			statement = connection.prepareStatement(sqlUser);
+			statement.executeUpdate();
+			connection.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+		}
+	}
 
 }

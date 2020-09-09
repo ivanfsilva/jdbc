@@ -88,5 +88,11 @@ public class UserDAOTest {
 			System.out.println("---------------------------------------------------------------");
 		}
 	}
+	
+	@Test
+	public void deleteUserFone() {
+		UserDAO dao = new UserDAO();
+		dao.deleteFonesPorUser(2L);
+	}
 
 }
